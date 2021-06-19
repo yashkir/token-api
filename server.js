@@ -12,6 +12,10 @@ if (!process.env.ENDPOINT) {
 }
 
 /* Routes */
+app.get('/', (req, res) => {
+  res.send("Usage: https://yashkir-token-api.herokuapp.com/:ERC-20-Address/:Token-Holder-Address");
+});
+
 app.get('/:tokenAddress/:holderAddress', async (req, res) => {
   try {
     const eth = new Eth(process.env.ENDPOINT);
